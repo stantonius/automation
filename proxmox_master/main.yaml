@@ -1,0 +1,16 @@
+---
+- name: Proxmox master node config
+  hosts: bigprox
+  gather_facts: yes
+
+  tasks:
+    - name: Create a directory to house the ssh keys to pass to a new LXC
+      ansible.builtin.file:
+        path: /var/lib/vz/snippets/
+        state: directory
+        mode: 0700
+    - name: Copy the bash script to snippets directory and make it executable
+      ansible.builtin.copy:
+        src: enable_lxc_ssh_hook.sh
+        dest: /var/lib/vz/snippets
+        mode: 0700

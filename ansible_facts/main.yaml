@@ -1,0 +1,9 @@
+---
+- name: Proxmox master node config
+  hosts: bigprox
+  gather_facts: yes
+
+  tasks:
+    - name: Print all available facts
+      ansible.builtin.debug:
+        var: vars

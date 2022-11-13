@@ -1,0 +1,13 @@
+# Terraform
+*.tfvars
+.terraform/
+*.tfstate
+*.tfstate.*
+*.lock.hcl
+
+# Ansible
+secrets.yaml
+secrets.yml
+vars.yaml
+vars.yml
+inventory.cfg
